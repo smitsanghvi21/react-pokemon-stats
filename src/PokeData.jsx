@@ -9,7 +9,7 @@ const PokeMonData = (props) => {
       <td>{pokemon.type.join(" ", " ")}</td>
       <td>{pokemon.base.HP}</td>
       <td>
-        <button onClick={() => onSelection(pokemon)}>Select</button>
+        <button type="button" class="btn btn-primary"onClick={() => onSelection(pokemon)}>Select</button>
       </td>
     </tr>
   );

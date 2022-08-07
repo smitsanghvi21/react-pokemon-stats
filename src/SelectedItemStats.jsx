@@ -6,7 +6,7 @@ const SelectedItemStats = (props) => {
   return (
     <div>
       <h1>The Pokemon stats for {props.name.english} are:</h1>
-      <table width="100%">
+      <table class="table" width="100%">
         <thead>
           <tr>
             <th>Pokemon type</th>

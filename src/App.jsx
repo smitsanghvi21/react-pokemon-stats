@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <h1 className="title">Pokemon search</h1>
       <input value={filter} onChange={onFilterChange} placeholder="search" />
-      <table width="100%">
+      <table class="table"width="100%">
         <thead>
           <tr>
             <th>Id</th>
