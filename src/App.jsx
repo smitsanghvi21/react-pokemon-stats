@@ -1,12 +1,20 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import myjson from "./myjson";
+import myjson from "../public/myjson.json";
 import PokeMonData from "./PokeData";
 import SelectedItemStats from "./SelectedItemStats";
 
 function App() {
   const [filter, setFilter] = useState("");
+  const [pokemon, pokemonSet] = useState([]);
   const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    const url = "http://localhost:3000/myjson.json";
+    fetch(url).then((res) => {
+      console.log(res);
+    });
+  }, []);
 
   const onFilterChange = (e) => {
     setFilter(e.target.value);
@@ -20,7 +28,8 @@ function App() {
     <div className="App">
       <h1 className="title">Pokemon search</h1>
       <input value={filter} onChange={onFilterChange} placeholder="search" />
-      <table class="table"width="100%">
+      {selected ? <SelectedItemStats {...selected} /> : ""}
+      <table class="table" width="100%">
         <thead>
           <tr>
             <th>Id</th>
@@ -42,7 +51,6 @@ function App() {
             ))}
         </tbody>
       </table>
-      {selected ? <SelectedItemStats {...selected} /> : ""}
     </div>
   );
 }
