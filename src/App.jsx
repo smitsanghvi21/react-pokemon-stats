@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import myjson from "../public/myjson.json";
+import myjson from "./myjson.json";
 import PokeMonData from "./PokeData";
 import SelectedItemStats from "./SelectedItemStats";
 
@@ -9,12 +9,12 @@ function App() {
   const [pokemon, pokemonSet] = useState([]);
   const [selected, setSelected] = useState(null);
 
-  useEffect(() => {
+ /* useEffect(() => {
     const url = "http://localhost:3000/myjson.json";
     fetch(url).then((res) => {
       console.log(res);
     });
-  }, []);
+  }, []);*/
 
   const onFilterChange = (e) => {
     setFilter(e.target.value);
